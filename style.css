@@ -1,0 +1,78 @@
+body {
+  background-color: turquoise;
+  margin: 0;
+  padding: 1em;
+  height: 100vh;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+
+}
+
+.line {
+  margin: 5px auto;
+}
+
+.word {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.word.loading {
+  animation: 1.5s linear infinite loadingWord;
+}
+
+@keyframes loadingWord {
+  0% { 
+    transform: translateY(0px) scale(1) rotateY(0grad);
+  }
+  25% { 
+    transform: translateY(10px) scale(0.9);
+    animation-timing-function: ease-in;
+  }
+  50% { 
+    transform: translateY(0px) scale(0.8) rotateY(180grad);
+  }
+  75% { 
+    transform: translateY(-10px) scale(0.9);
+    animation-timing-function: ease-in;
+  }
+  100% { 
+    transform: translateY(0px) scale(1) rotateY(0grad);
+  }
+}
+
+.word.disappearing {
+  animation: 750ms ease-in-out forwards disappearingWord;
+}
+
+@keyframes disappearingWord {
+  0% { 
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% { 
+    transform: translateY(16px);
+    opacity: 0;
+  }
+}
+.word.appearing {
+  animation: 750ms ease-in-out forwards appearingWord;
+}
+
+@keyframes appearingWord {
+  0% { 
+    transform: translateY(-16px);
+    opacity: 0;
+  }
+  100% { 
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
